@@ -1,0 +1,391 @@
+.hero {
+  background: url('../../public/images/redfernsImage.webp');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 180px 0 385px 0;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Darken the background image slightly to make flowers pop */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2); /* Subtle dark overlay */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Layer 1: Tiny cherry blossoms - most numerous, fastest floating */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Light pink cherry blossoms */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='12px' height='12px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23ff8a9f'/%3E%3C/svg%3E") 5px 10px,
+    
+    /* Dark pink cherry blossoms */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff8a9f' width='10px' height='10px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23ff5773'/%3E%3C/svg%3E") 15px 25px,
+    
+    /* White cherry blossoms */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe4e8' width='14px' height='14px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23ffb7c5'/%3E%3C/svg%3E") 28px 42px,
+    
+    /* Peach cherry blossoms */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffd1b3' width='11px' height='11px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23ff9f7a'/%3E%3C/svg%3E") 42px 18px,
+    
+    /* Five-petal cherry blossoms */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='13px' height='13px'%3E%3Ccircle cx='12' cy='12' r='1.5' fill='%23ff8a9f'/%3E%3Cpath d='M12 5L14 9L18 9L15 12L17 16L12 13L7 16L9 12L6 9L10 9L12 5' fill='%23ffb7c5'/%3E%3C/svg%3E") 55px 63px,
+    
+    /* More cherry blossoms for denser effect */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='12px' height='12px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23ff8a9f'/%3E%3C/svg%3E") 68px 88px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff8a9f' width='10px' height='10px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23ff5773'/%3E%3C/svg%3E") 78px 92px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe4e8' width='14px' height='14px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23ffb7c5'/%3E%3C/svg%3E") 92px 110px;
+  background-repeat: no-repeat;
+  animation: flutterTiny 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px rgba(255,182,193,0.5));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Layer 2: Small cherry blossoms - numerous, medium floating */
+.hero .flowersmall {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Small cherry blossoms with vibrant colors */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='18px' height='18px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2.5' fill='%23ff8a9f'/%3E%3C/svg%3E") 25px 105px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff8a9f' width='16px' height='16px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2.5' fill='%23ff5773'/%3E%3C/svg%3E") 63px 156px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe4e8' width='17px' height='17px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2.5' fill='%23ffb7c5'/%3E%3C/svg%3E") 92px 78px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffd1b3' width='15px' height='15px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2.5' fill='%23ff9f7a'/%3E%3C/svg%3E") 124px 198px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='19px' height='19px'%3E%3Ccircle cx='12' cy='12' r='2' fill='%23ff8a9f'/%3E%3Cpath d='M12 5L14 9L18 9L15 12L17 16L12 13L7 16L9 12L6 9L10 9L12 5' fill='%23ffb7c5'/%3E%3C/svg%3E") 158px 134px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='16px' height='16px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2.5' fill='%23ff8a9f'/%3E%3C/svg%3E") 187px 215px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff8a9f' width='18px' height='18px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='2.5' fill='%23ff5773'/%3E%3C/svg%3E") 219px 95px;
+  background-repeat: no-repeat;
+  animation: flutterSmall 5s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255,182,193,0.6));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Layer 3: Medium cherry blossoms - colorful, graceful floating */
+.hero .flowermedium {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='24px' height='24px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23ff8a9f'/%3E%3C/svg%3E") 45px 287px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff8a9f' width='22px' height='22px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23ff5773'/%3E%3C/svg%3E") 98px 324px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe4e8' width='23px' height='23px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23ffb7c5'/%3E%3C/svg%3E") 156px 256px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffd1b3' width='24px' height='24px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23ff9f7a'/%3E%3C/svg%3E") 213px 298px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='22px' height='22px'%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%23ff8a9f'/%3E%3Cpath d='M12 5L14 9L18 9L15 12L17 16L12 13L7 16L9 12L6 9L10 9L12 5' fill='%23ffb7c5'/%3E%3C/svg%3E") 267px 342px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='24px' height='24px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23ff8a9f'/%3E%3C/svg%3E") 324px 279px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff8a9f' width='23px' height='23px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23ff5773'/%3E%3C/svg%3E") 378px 315px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe4e8' width='22px' height='22px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='3' fill='%23ffb7c5'/%3E%3C/svg%3E") 432px 268px;
+  background-repeat: no-repeat;
+  animation: flutterMedium 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255,182,193,0.5));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Layer 4: Large cherry blossoms - rare, majestic floating */
+.hero .flowerlarge {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='32px' height='32px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4' fill='%23ff8a9f'/%3E%3C/svg%3E") 134px 487px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff8a9f' width='34px' height='34px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4' fill='%23ff5773'/%3E%3C/svg%3E") 278px 534px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe4e8' width='32px' height='32px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4' fill='%23ffb7c5'/%3E%3C/svg%3E") 423px 456px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffd1b3' width='36px' height='36px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4' fill='%23ff9f7a'/%3E%3C/svg%3E") 567px 512px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='34px' height='34px'%3E%3Ccircle cx='12' cy='12' r='3' fill='%23ff8a9f'/%3E%3Cpath d='M12 5L14 9L18 9L15 12L17 16L12 13L7 16L9 12L6 9L10 9L12 5' fill='%23ffb7c5'/%3E%3C/svg%3E") 712px 478px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='32px' height='32px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4' fill='%23ff8a9f'/%3E%3C/svg%3E") 856px 523px;
+  background-repeat: no-repeat;
+  animation: flutterLarge 7s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(255,182,193,0.6));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating cherry blossoms animation - flowers that drift across the screen */
+.hero .floatingflower {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='40px' height='40px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4' fill='%23ff8a9f'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: floatAround 15s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(255,182,193,0.8));
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero .floatingflower:nth-child(1) {
+  top: 5%;
+  left: -10%;
+  animation-delay: 0s;
+  width: 35px;
+  height: 35px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='35px' height='35px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='3.5' fill='%23ff8a9f'/%3E%3C/svg%3E");
+}
+
+.hero .floatingflower:nth-child(2) {
+  top: 25%;
+  left: -10%;
+  animation-delay: 3s;
+  width: 45px;
+  height: 45px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff8a9f' width='45px' height='45px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4.5' fill='%23ff5773'/%3E%3C/svg%3E");
+}
+
+.hero .floatingflower:nth-child(3) {
+  top: 45%;
+  left: -10%;
+  animation-delay: 6s;
+  width: 40px;
+  height: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffe4e8' width='40px' height='40px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4' fill='%23ffb7c5'/%3E%3C/svg%3E");
+}
+
+.hero .floatingflower:nth-child(4) {
+  top: 65%;
+  left: -10%;
+  animation-delay: 9s;
+  width: 50px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffd1b3' width='50px' height='50px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='5' fill='%23ff9f7a'/%3E%3C/svg%3E");
+}
+
+.hero .floatingflower:nth-child(5) {
+  top: 85%;
+  left: -10%;
+  animation-delay: 1.5s;
+  width: 38px;
+  height: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='38px' height='38px'%3E%3Ccircle cx='12' cy='12' r='3' fill='%23ff8a9f'/%3E%3Cpath d='M12 5L14 9L18 9L15 12L17 16L12 13L7 16L9 12L6 9L10 9L12 5' fill='%23ffb7c5'/%3E%3C/svg%3E");
+}
+
+.hero .floatingflower:nth-child(6) {
+  top: 15%;
+  left: -10%;
+  animation-delay: 11s;
+  width: 42px;
+  height: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='42px' height='42px'%3E%3Cpath d='M12 3C8 3 4 6 4 10c0 2 1 4 3 6-1 1-2 3-2 5 0 3 2 5 4 5 2 0 3-2 3-2s1 2 3 2c2 0 4-2 4-5 0-2-1-4-2-5 2-2 3-4 3-6 0-4-4-7-8-7z'/%3E%3Ccircle cx='12' cy='11' r='4' fill='%23ff8a9f'/%3E%3C/svg%3E");
+}
+
+/* Fluttering animations for stationary flowers */
+@keyframes flutterTiny {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: translateY(-5px) rotate(3deg);
+    opacity: 0.9;
+  }
+  50% { 
+    transform: translateY(-8px) rotate(-3deg);
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-3px) rotate(2deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes flutterSmall {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  30% { 
+    transform: translateY(-8px) rotate(5deg) scale(1.1);
+    opacity: 1;
+  }
+  60% { 
+    transform: translateY(-12px) rotate(-5deg) scale(1.15);
+    opacity: 1;
+  }
+  80% { 
+    transform: translateY(-5px) rotate(3deg) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes flutterMedium {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% { 
+    transform: translateY(-10px) rotate(8deg) scale(1.1);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateY(-18px) rotate(-8deg) scale(1.2);
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+  75% { 
+    transform: translateY(-6px) rotate(5deg) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes flutterLarge {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.9;
+  }
+  20% { 
+    transform: translateY(-12px) rotate(10deg) scale(1.15);
+    opacity: 1;
+  }
+  40% { 
+    transform: translateY(-22px) rotate(-10deg) scale(1.3);
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  60% { 
+    transform: translateY(-12px) rotate(10deg) scale(1.15);
+    opacity: 1;
+  }
+  80% { 
+    transform: translateY(-6px) rotate(5deg) scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes floatAround {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  15% {
+    transform: translateX(20vw) translateY(-30px) rotate(15deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(40vw) translateY(20px) rotate(-10deg);
+    opacity: 0.95;
+  }
+  45% {
+    transform: translateX(60vw) translateY(-25px) rotate(20deg);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translateX(80vw) translateY(15px) rotate(-15deg);
+    opacity: 0.85;
+  }
+  75% {
+    transform: translateX(100vw) translateY(-20px) rotate(10deg);
+    opacity: 0.8;
+  }
+  90% {
+    transform: translateX(120vw) translateY(10px) rotate(-5deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(140vw) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* Petal shower effect - additional floating petals */
+.hero .petal {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb7c5' width='15px' height='15px'%3E%3Cpath d='M12 3Q14 5 16 3Q18 5 16 8Q18 11 16 14Q18 17 16 20Q14 18 12 20Q10 18 8 20Q6 17 8 14Q6 11 8 8Q6 5 8 3Q10 5 12 3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: petalFall 10s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.hero .petal:nth-child(7) { left: 10%; animation-delay: 0s; animation-duration: 8s; }
+.hero .petal:nth-child(8) { left: 30%; animation-delay: 2s; animation-duration: 9s; }
+.hero .petal:nth-child(9) { left: 50%; animation-delay: 4s; animation-duration: 7s; }
+.hero .petal:nth-child(10) { left: 70%; animation-delay: 1s; animation-duration: 10s; }
+.hero .petal:nth-child(11) { left: 90%; animation-delay: 3s; animation-duration: 8.5s; }
+
+@keyframes petalFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/* Ensure content stays above flowers */
+.hero h1,
+.hero p,
+.hero .btn {
+  position: relative;
+  z-index: 10;
+  text-shadow: 
+    0 0 20px rgba(0,0,0,0.5),
+    0 0 40px rgba(255,255,255,0.5);
+}
+
+/* Add a subtle glow to the text - enhanced for cherry blossom theme */
+.hero h1 {
+  font-size: 3.5em;
+  text-shadow: 
+    2px 2px 4px rgba(0,0,0,0.5),
+    0 0 20px rgba(255,255,255,0.8),
+    0 0 40px rgba(255,183,197,0.6);
+}
+
+.hero p {
+  font-size: 1.5em;
+  text-shadow: 
+    1px 1px 3px rgba(0,0,0,0.5),
+    0 0 15px rgba(255,255,255,0.7),
+    0 0 30px rgba(255,183,197,0.4);
+}
+
+.hero .btn {
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.3),
+    0 0 20px rgba(255,255,255,0.5),
+    0 0 30px rgba(255,183,197,0.3);
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 6px 20px rgba(0,0,0,0.4),
+    0 0 30px rgba(255,255,255,0.8),
+    0 0 50px rgba(255,183,197,0.6);
+}

@@ -1,6 +1,7 @@
 // pages/HomePage.js
 import React from 'react';
 import BookCard from '../Components/BookCard';
+import Styles from '../Css/HomePage.module.css';
 
 function HomePage() {
   const featuredBooks = [
@@ -12,7 +13,38 @@ function HomePage() {
 
   return (
     <div>
-      <div className="hero">
+      <div className={`${Styles.hero}`}>
+        
+        <div className={`${Styles.flowersmall}`}></div>
+        <div className={`${Styles.flowermedium}`}></div>
+        <div className={`${Styles.flowermedium}`}></div>
+  
+  {/* Floating flowers that drift across the screen */}
+ 
+  {/* Additional falling petals for extra magic */}
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+  <div className={`${Styles.petal}`}></div>
+ 
+
         <h1>Ignite a Lifelong Love of Reading</h1>
         <p>Discover vibrant, inclusive, and meaningful stories that young readers will cherish for years to come.</p>
         <a href="#" className="btn">Explore Our Books</a>

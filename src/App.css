@@ -146,18 +146,75 @@ main {
 /* Hero Section */
 .hero {
   background: linear-gradient(
-  rgba(255, 154, 235, 0.8),
-  rgba(211, 139, 255, 0.8),
-  rgba(138, 182, 255, 0.8),
-  rgba(105, 230, 255, 0.8)
-), url('../public/images/redfernsImage.webp');
+    rgba(255, 154, 235, 0.8),
+    rgba(211, 139, 255, 0.8),
+    rgba(138, 182, 255, 0.8),
+    rgba(105, 230, 255, 0.8)
+  ), url('../public/images/redfernsImage.webp');
   background-size: cover;
   background-position: center;
   color: white;
-  padding: 180px 0 385px  0;
+  padding: 180px 0 385px 0;
   text-align: center;
   border-radius: 10px;
   margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 80px 110px, #ffd700, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 50px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 180px 150px, #fffacd, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 240px 90px, #fff0f5, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 300px 170px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 360px 40px, #e6e6fa, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 420px 130px, #f0e68c, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 480px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 540px 160px, #ffe4e1, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 600px 100px, #e0ffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 660px 140px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 720px 60px, #f5f5dc, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 780px 120px, #ffe0f0, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 840px 180px, #fff, rgba(0,0,0,0));
+  background-repeat: no-repeat;
+  animation: sparkle 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0.3;
+  }
+  25% { 
+    opacity: 0.7;
+    filter: brightness(1.2);
+  }
+  50% { 
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+  75% { 
+    opacity: 0.5;
+    filter: brightness(0.9);
+  }
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
