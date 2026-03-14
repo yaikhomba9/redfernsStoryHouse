@@ -15,7 +15,7 @@ const Header = () => {
             <div className={style.logoIcon}>
               <img src={logoImage} alt="Redfern Storyhouse Logo" />
             </div>
-            <div className={style.logoText}>
+            <div className={style.logoText}> 
               <span className={`${style.redfernText} ${style.elegantRedfern}`}>
                 Redfern
               </span>
