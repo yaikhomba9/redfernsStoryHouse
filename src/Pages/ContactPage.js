@@ -19,31 +19,31 @@ function ContactPage() {
             </form>
           </div>
           <div style={{flex: '1', minWidth: '300px'}}>
-            <h2 style={{color: 'var(--dark)', marginBottom: '20px', fontSize: '28px'}}>Store Information</h2>
+            {/* <h2 style={{color: 'var(--dark)', marginBottom: '20px', fontSize: '28px'}}>Store Information</h2>
             <div style={{marginBottom: '25px'}}>
               <h3 style={{color: 'var(--dark)', marginBottom: '15px', fontSize: '20px', display: 'flex', alignItems: 'center', gap: '10px'}}>
                 <i className="fas fa-map-marker-alt"></i> Address
               </h3>
-              <p>123 Storybook Lane<br />Imagination City, IC 12345</p>
+              <p>Keishamthong Elangbam Leikai Leirak Achouba<br />Imphal-West, Manipur, Pin: 795001, India.</p>
             </div>
             <div style={{marginBottom: '25px'}}>
               <h3 style={{color: 'var(--dark)', marginBottom: '15px', fontSize: '20px', display: 'flex', alignItems: 'center', gap: '10px'}}>
                 <i className="fas fa-phone"></i> Phone
               </h3>
               <p>(555) 123-4567</p>
-            </div>
+            </div> */}
             <div style={{marginBottom: '25px'}}>
               <h3 style={{color: 'var(--dark)', marginBottom: '15px', fontSize: '20px', display: 'flex', alignItems: 'center', gap: '10px'}}>
                 <i className="fas fa-envelope"></i> Email
               </h3>
               <p>info@redfernstoryhouse.com</p>
             </div>
-            <div style={{marginBottom: '25px'}}>
+            {/* <div style={{marginBottom: '25px'}}>
               <h3 style={{color: 'var(--dark)', marginBottom: '15px', fontSize: '20px', display: 'flex', alignItems: 'center', gap: '10px'}}>
                 <i className="fas fa-clock"></i> Store Hours
               </h3>
               <p>Monday - Friday: 9am - 7pm<br />Saturday: 10am - 6pm<br />Sunday: 12pm - 5pm</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

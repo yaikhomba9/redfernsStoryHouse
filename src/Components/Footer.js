@@ -20,16 +20,17 @@ function Footer() {
             <h3>Quick Links</h3>
             <ul className="footer-links">
               <li><a href="#">Home</a></li>
-              <li><a href="#">Books</a></li>
-              <li><a href="#">Categories</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="books">Books</a></li>
+              <li><a href="/catogeries">Categories</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
           <div className="footer-section">
             <h3>Contact Us</h3>
-            <p><i className="fas fa-map-marker-alt"></i> 123 Storybook Lane, Imagination City</p>
-            <p><i className="fas fa-phone"></i> (555) 123-4567</p>
+            {/* <p><i className="fas fa-map-marker-alt"></i> Keishamthong Elangbam Leikai Leirak Achouba
+              Imphal-West, Manipur, Pin: 795001, India.</p>
+            <p><i className="fas fa-phone"></i> (555) 123-4567</p> */}
             <p><i className="fas fa-envelope"></i> info@redfernstoryhouse.com</p>
           </div>
         </div>

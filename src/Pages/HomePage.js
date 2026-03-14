@@ -50,7 +50,7 @@ function HomePage() {
         <a href="#" className="btn">Explore Our Books</a>
       </div>
       
-      <div className="container">
+      <div className={Styles.container}>
         <h2 className="page-title">Featured Books</h2>
         <div className="book-grid">
           {featuredBooks.map(book => (

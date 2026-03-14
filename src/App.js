@@ -10,6 +10,7 @@ import CategoriesPage from './Pages/CategoriesPage';
 import AboutPage from './Pages/AboutPage';
 import ContactPage from './Pages/ContactPage';
 import './App.css';
+import styles from '../src/Css/HomePage.module.css';
 
 function App() {
   //const [activePage, setActivePage] = useState('home');
@@ -32,7 +33,7 @@ function App() {
   }; */
   
   return (
-    <div className="App">
+    <div className={`${styles.backTheme} App`}>
     <Router>
       <Header />
       <Navigation />
