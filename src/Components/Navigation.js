@@ -1,10 +1,10 @@
-// components/Navigation.js
-import React, { useState } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import styles from '../Css/Navigation.module.css';
 
-function Navigation() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // detects active route
+const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const menuItems = [
     { id: 'home', label: 'Home', icon: 'fas fa-home', path: '/' },
@@ -14,29 +14,82 @@ function Navigation() {
     { id: 'contact', label: 'Contact', icon: 'fas fa-envelope', path: '/contact' }
   ];
 
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (!mobile) {
+        setIsMenuOpen(false); // Close menu when switching to desktop
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest(`.${styles.navContainer}`)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
+
+  // Close menu when route changes
+  const handleNavClick = () => {
+    if (isMobile) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className="nav-wrapper">
-      <div className="container">
-        <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
-          <i className="fas fa-bars"></i>
+    <nav className={styles.navbar}>
+      <div className={styles.navContainer}>
+        {/* Mobile Menu Button */}
+        <button 
+          className={`${styles.menuButton} ${isMenuOpen ? styles.active : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+        >
+          <span className={styles.hamburgerLine}></span>
+          <span className={styles.hamburgerLine}></span>
+          <span className={styles.hamburgerLine}></span>
         </button>
 
-        <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
-          {menuItems.map(item => (
-            <li key={item.id}>
-              <Link
-                to={item.path}
-                className={`nav-link ${location.pathname === item.path ? "active" : ""}`}
-                onClick={() => setMenuOpen(false)}
-              >
-                <i className={`${item.icon} nav-icon`}></i> {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Navigation Menu */}
+        <div 
+          className={`${styles.menuContainer} ${isMenuOpen ? styles.menuOpen : ''}`}
+        >
+          <ul className={styles.menuList}>
+            {menuItems.map((item) => (
+              <li key={item.id} className={styles.menuItem}>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) => 
+                    isActive ? `${styles.menuLink} ${styles.active}` : styles.menuLink
+                  }
+                  onClick={handleNavClick}
+                >
+                  <i className={`${item.icon} ${styles.menuIcon}`}></i>
+                  <span className={styles.menuLabel}>{item.label}</span>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Navigation;
