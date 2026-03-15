@@ -45,9 +45,30 @@ function HomePage() {
   <div className={`${Styles.petal}`}></div>
  
 
-        <h1>Ignite a Lifelong Love of Reading</h1>
+        {/* <h1>Ignite a Lifelong Love of Reading</h1>
         <p>Discover vibrant, inclusive, and meaningful stories that young readers will cherish for years to come.</p>
-        <a href="#" className="btn">Explore Our Books</a>
+        <a href="#" className="btn">Explore Our Books</a> */}
+        
+<div className={Styles.textGlobe}>
+  <div className={Styles.floatingCard}>
+    <h1 className={Styles.glassTitle}>
+      <span className={Styles.titleWord}>Ignite a Lifelong</span>
+      <span className={Styles.titleWord}>Love of Reading</span>
+    </h1>
+    <p className={Styles.glassText}>
+      Discover vibrant, inclusive, and meaningful stories that young readers will cherish for years to come.
+    </p>
+    <div className={Styles.buttonGroup}>
+      <a href="#" className={`${Styles.btn} ${Styles.magicBtn}`}>
+        <span>Explore Our Books</span>
+        <span className={Styles.btnSparkle}>✨</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+        
       </div>
       
       <div className={Styles.container}>
