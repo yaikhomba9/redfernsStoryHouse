@@ -1,0 +1,361 @@
+/* AboutPage.module.css */
+
+.aboutPage {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Dreamy Background */
+.dreamyBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(190deg, rgba(34, 103, 115, 0.96), rgba(63, 71, 187, 0.74), #a74040bd);
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Clouds Animation */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1000px;
+  filter: blur(20px);
+  animation: float linear infinite;
+}
+
+.cloud1 {
+  width: 200px;
+  height: 120px;
+  top: 10%;
+  left: -100px;
+  animation-duration: 25s;
+}
+
+.cloud2 {
+  width: 300px;
+  height: 180px;
+  bottom: 15%;
+  right: -150px;
+  animation-duration: 35s;
+  animation-delay: -5s;
+}
+
+.cloud3 {
+  width: 250px;
+  height: 150px;
+  top: 40%;
+  left: -120px;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  from {
+    transform: translateX(-100%) translateY(0);
+  }
+  to {
+    transform: translateX(100vw) translateY(30px);
+  }
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+              radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+              radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+              radial-gradient(3px 3px at 160px 120px, #fff, rgba(0,0,0,0));
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Floating Bubbles */
+.floatingBubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.floatingBubbles::before,
+.floatingBubbles::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  animation: bubble 8s ease-in-out infinite;
+}
+
+.floatingBubbles::before {
+  top: 20%;
+  left: 10%;
+  animation-delay: -2s;
+}
+
+.floatingBubbles::after {
+  bottom: 30%;
+  right: 15%;
+  width: 150px;
+  height: 150px;
+  animation-delay: -4s;
+}
+
+@keyframes bubble {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-50px) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+/* Content */
+.dreamyContent {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+}
+
+.pageTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-family: 'Cloudy Peaches', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI Emoji', cursive;
+}
+
+.dreamyTitle {
+  background: linear-gradient(135deg, #fff 0%, #f0e6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  animation: fadeInDown 1s ease-out;
+}
+
+.titleSparkle {
+  display: inline-block;
+  font-size: 2.5rem;
+  animation: sparkle 2s ease-in-out infinite;
+  margin: 0 15px;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dreamyContainer {
+  /* Additional container styles if needed */
+}
+
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dreamySection {
+  /* Additional section styles if needed */
+}
+
+.storyCard {
+
+  border-radius: 20px;
+  /* padding: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1); */
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.storyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+  
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dreamyText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #edff72;
+  margin: 0;
+  font-family: 'Comic Neue', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Comic Sans', cursive;
+}
+
+.missionHeader,
+.joinSection {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.rainbowLine {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #ffd93d, #6bcf7f, #4d9de0, #9b59b6);
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+.dreamySubtitle {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  margin: 20px 0;
+  display: inline-block;
+  background: linear-gradient(135deg, #fff 0%, #ffd89b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.missionCardLarge {
+  /* Additional styles for mission card */
+}
+
+.missionText {
+  font-size: 1.15rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.dreamyMissionCard {
+  /* Styles for MissionCard wrapper if needed */
+}
+
+.missionCardText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ffe34c;
+  margin-bottom: 15px;
+  font-family: 'Comic Neue', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Comic Sans', cursive;
+  font-size: medium;
+}
+
+.joinCard {
+  text-align: center;
+}
+
+.welcomeClosing {
+  margin-top: 50px;
+  text-align: center;
+
+}
+
+.dreamyWelcomeText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #fff 0%, #ffd89b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 20px;
+  border-radius: 50px;
+  animation: pulse 2s ease-in-out infinite;
+  font-family: 'Comic Neue', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Comic Sans', cursive;
+
+
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Animation delays for cards */
+.storyCard:nth-child(1) { animation-delay: 0.1s; }
+.storyCard:nth-child(2) { animation-delay: 0.2s; }
+.storyCard:nth-child(3) { animation-delay: 0.3s; }
+.storyCard:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dreamyTitle {
+    font-size: 2rem;
+  }
+  
+  .titleSparkle {
+    font-size: 1.8rem;
+  }
+  
+  .dreamySubtitle {
+    font-size: 1.5rem;
+  }
+  
+  .dreamyWelcomeText {
+    font-size: 1.2rem;
+  }
+  
+  .storyCard {
+    padding: 20px;
+  }
+  
+  .dreamyText {
+    font-size: 1rem;
+  }
+  
+  .missionGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Optional: Add smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  .aboutPage {
+    scroll-behavior: smooth;
+  }
+}

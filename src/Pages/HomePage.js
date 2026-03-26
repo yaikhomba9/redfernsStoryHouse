@@ -1,5 +1,5 @@
 // pages/HomePage.js
-import React from 'react';
+import React,{useRef } from 'react';
 import BookCard from '../Components/BookCard';
 import Styles from '../Css/HomePage.module.css';
 
@@ -10,6 +10,17 @@ function HomePage() {
     { id: 3, title: "The Little Dragon", author: "Sarah Lee", price: "$10.99", category: "Fantasy" },
     { id: 4, title: "Ocean Explorers", author: "Michael Brown", price: "$13.99", category: "Adventure" }
   ];
+
+
+  const featuredSectionRef = useRef(null);
+
+  const handleExploreClick = (e) => {
+  e.preventDefault();
+  featuredSectionRef.current?.scrollIntoView({ 
+    behavior: 'smooth',
+    block: 'start'
+  });
+};
 
   return (
     <div>
@@ -59,7 +70,8 @@ function HomePage() {
       Discover vibrant, inclusive, and meaningful stories that young readers will cherish for years to come.
     </p>
     <div className={Styles.buttonGroup}>
-      <a href="#" className={`${Styles.btn} ${Styles.magicBtn}`}>
+      <a href="#featured-books" className={`${Styles.btn} ${Styles.magicBtn}`}
+      onClick={handleExploreClick}>
         <span>Explore Our Books</span>
         <span className={Styles.btnSparkle}>✨</span>
       </a>
@@ -71,7 +83,7 @@ function HomePage() {
         
       </div>
       
-      <div className={Styles.container}>
+      <div ref={featuredSectionRef} className={Styles.container}>
         <h2 className="page-title">Featured Books</h2>
         <div className="book-grid">
           {featuredBooks.map(book => (
