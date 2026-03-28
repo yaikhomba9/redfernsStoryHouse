@@ -9,7 +9,7 @@ const Navigation = () => {
   const menuItems = [
     { id: 'home', label: 'Home', icon: 'fas fa-home', path: '/' },
     { id: 'books', label: 'Books', icon: 'fas fa-book', path: '/books' },
-    { id: 'categories', label: 'Categories', icon: 'fas fa-list', path: '/categories' },
+    // { id: 'categories', label: 'Categories', icon: 'fas fa-list', path: '/categories' },
     { id: 'about', label: 'About Us', icon: 'fas fa-info-circle', path: '/about' },
     { id: 'contact', label: 'Contact', icon: 'fas fa-envelope', path: '/contact' }
   ];

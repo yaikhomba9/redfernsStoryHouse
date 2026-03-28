@@ -122,6 +122,8 @@
 
 .menuLabel {
   font-size: 1rem;
+  font-family: 'Cloudy Peaches', 'Comic Neue', 'Comic Sans MS', cursive;
+  font-style: bolder;
 }
 
 /* Mobile Responsive Styles */

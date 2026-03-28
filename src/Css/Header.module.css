@@ -80,7 +80,7 @@
 
 .redfernText {
   color: #c73915;
-  font-size: 28px;
+  font-size: 32px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
   letter-spacing: 1px;
   position: relative;
@@ -106,7 +106,7 @@
 
 .storyhouseText {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
   opacity: 0.95;
   letter-spacing: 2px;
@@ -115,11 +115,13 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+    font-family: 'Cloudy Peaches', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI Emoji', cursive;
+
 }
 
 /* Elegant font option */
 .elegantRedfern {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cloudy Peaches', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI Emoji', cursive;
   font-weight: 700;
   background: linear-gradient(135deg, #fa0303, #fc0101);
   -webkit-background-clip: text;
@@ -138,7 +140,7 @@
 
 .elegantStoryhouse {
   font-family: 'Poppins', sans-serif;
-  font-weight: 300;
+  font-weight: 900;
   letter-spacing: 3px;
   text-transform: uppercase;
   background: linear-gradient(135deg, #ffffff, #e0e0e0);
@@ -148,6 +150,8 @@
   border-left: 2px solid #ffd166;
   padding-left: 10px;
   margin-left: 5px;
+  font-family: 'Cloudy Peaches', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI Emoji', cursive;
+
 }
 
 /* Right Side Decorations */
