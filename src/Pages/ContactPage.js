@@ -26,7 +26,7 @@ function ContactPage() {
 
   const sendToBackend = async (data) => {
     // Call your backend API instead of Telegram directly
-    const response = await fetch('http://localhost:3001/api/contact', {
+    const response = await fetch('https://lightslategray-hamster-872518.hostingersite.com//api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -37,8 +37,6 @@ function ContactPage() {
         message: data.message
       })
     });
-
-    console.log("response>>>>>>>>>",response);
 
     if (!response.ok) {
       const errorData = await response.json();
