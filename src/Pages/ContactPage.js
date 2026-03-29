@@ -10,6 +10,10 @@ function ContactPage() {
   });
   
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  // REMOVED: Hardcoded tokens - NO LONGER HERE!
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,29 +21,61 @@ function ContactPage() {
       ...prevState,
       [name]: value
     }));
+    if (error) setError('');
   };
 
-  const handleSubmit = (e) => {
+  const sendToBackend = async (data) => {
+    // Call your backend API instead of Telegram directly
+    const response = await fetch('http://localhost:3001/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        message: data.message
+      })
+    });
+
+    console.log("response>>>>>>>>>",response);
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to send message');
+    }
+
+    return await response.json();
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      // Send to your backend (not directly to Telegram)
+      await sendToBackend(formData);
+      
+      setIsSubmitted(true);
+      
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({ name: '', email: '', message: '' });
+      }, 3000);
+      
+    } catch (error) {
+      console.error('Error:', error);
+      setError('Failed to send message. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <div className={styles.contactPage}>
       {/* Animated Background Elements */}
       <div className={styles.dreamyBackground}>
-        {/* <div className={styles.cloud + ' ' + styles.cloud1}></div>
-        <div className={styles.cloud + ' ' + styles.cloud2}></div>
-        <div className={styles.cloud + ' ' + styles.cloud3}></div>
-        <div className={styles.stars}></div>
-        <div className={styles.floatingBubbles}></div> */}
         <div className={styles.floatingStars}></div>
       </div>
 
@@ -72,58 +108,83 @@ function ContactPage() {
                   <p>Your message has been sent successfully. We'll get back to you soon!</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className={styles.contactForm}>
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
-                      <i className="fas fa-user"></i> Your Name
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="What's your name?"
-                      className={styles.formInput}
-                      required
-                    />
-                  </div>
+                <>
+                  {error && (
+                    <div className={styles.errorMessage}>
+                      <div className={styles.errorIcon}>⚠️</div>
+                      <p>{error}</p>
+                    </div>
+                  )}
                   
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
-                      <i className="fas fa-envelope"></i> Email Address
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your.email@example.com"
-                      className={styles.formInput}
-                      required
-                    />
-                  </div>
-                  
-                  <div className={styles.formGroup}>
-                    <label className={styles.formLabel}>
-                      <i className="fas fa-comment"></i> Your Message
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us what's on your mind... 📖✨"
-                      rows="6"
-                      className={styles.formTextarea}
-                      required
-                    ></textarea>
-                  </div>
-                  
-                  <button type="submit" className={styles.submitButton}>
-                    <span className={styles.buttonIcon}>✉️</span>
-                    Send Message
-                    <span className={styles.buttonIcon}>🌟</span>
-                  </button>
-                </form>
+                  <form onSubmit={handleSubmit} className={styles.contactForm}>
+                    <div className={styles.formGroup}>
+                      <label className={styles.formLabel}>
+                        <i className="fas fa-user"></i> Your Name
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="What's your name?"
+                        className={styles.formInput}
+                        required
+                        disabled={isLoading}
+                      />
+                    </div>
+                    
+                    <div className={styles.formGroup}>
+                      <label className={styles.formLabel}>
+                        <i className="fas fa-envelope"></i> Email Address
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="your.email@example.com"
+                        className={styles.formInput}
+                        required
+                        disabled={isLoading}
+                      />
+                    </div>
+                    
+                    <div className={styles.formGroup}>
+                      <label className={styles.formLabel}>
+                        <i className="fas fa-comment"></i> Your Message
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Tell us what's on your mind... 📖✨"
+                        rows="6"
+                        className={styles.formTextarea}
+                        required
+                        disabled={isLoading}
+                      ></textarea>
+                    </div>
+                    
+                    <button 
+                      type="submit" 
+                      className={styles.submitButton}
+                      disabled={isLoading}
+                    >
+                      {isLoading ? (
+                        <>
+                          <span className={styles.buttonIcon}>⏳</span>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <span className={styles.buttonIcon}>✉️</span>
+                          Send Message
+                          <span className={styles.buttonIcon}>🌟</span>
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </>
               )}
             </div>
             
@@ -153,8 +214,6 @@ function ContactPage() {
                       <p>We'll respond within 24-48 hours</p>
                     </div>
                   </div>
-                  
-                  
                   
                   <div className={styles.infoItem}>
                     <div className={styles.infoIcon}>
